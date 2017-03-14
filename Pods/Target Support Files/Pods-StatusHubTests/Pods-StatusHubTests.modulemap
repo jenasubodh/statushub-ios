@@ -1,0 +1,6 @@
+framework module Pods_StatusHubTests {
+  umbrella header "Pods-StatusHubTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

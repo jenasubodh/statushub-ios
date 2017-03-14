@@ -1,0 +1,6 @@
+framework module Pods_StatusHub {
+  umbrella header "Pods-StatusHub-umbrella.h"
+
+  export *
+  module * { export * }
+}
