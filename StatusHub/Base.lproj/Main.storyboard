@@ -22,21 +22,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9e6-eE-oYY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dz4-sd-Exf">
+                                <rect key="frame" x="16" y="82" width="232" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="7MS-qf-PHd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKa-1b-k53">
+                                <rect key="frame" x="264" y="82" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="E6A-LV-z3x"/>
+                                </constraints>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="didTapShare:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nhQ-l0-lWb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9e6-eE-oYY" secondAttribute="trailing" id="7Vd-LV-SWc"/>
-                            <constraint firstItem="9e6-eE-oYY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gch-Qn-QXb"/>
-                            <constraint firstItem="9e6-eE-oYY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IgF-jd-JO6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9e6-eE-oYY" secondAttribute="bottom" id="yo2-rp-kSd"/>
+                            <constraint firstItem="9e6-eE-oYY" firstAttribute="top" secondItem="dz4-sd-Exf" secondAttribute="bottom" constant="-48" id="0IY-MC-SYq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9e6-eE-oYY" secondAttribute="bottom" id="2Em-yL-dCG"/>
+                            <constraint firstItem="LKa-1b-k53" firstAttribute="leading" secondItem="9e6-eE-oYY" secondAttribute="trailing" constant="-111" id="Agr-Lq-MKf"/>
+                            <constraint firstItem="9e6-eE-oYY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BWS-v9-dDo"/>
+                            <constraint firstItem="9e6-eE-oYY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HdZ-2l-Nen"/>
+                            <constraint firstItem="9e6-eE-oYY" firstAttribute="top" secondItem="LKa-1b-k53" secondAttribute="bottom" constant="-48" id="XtO-di-nd4"/>
+                            <constraint firstItem="9e6-eE-oYY" firstAttribute="leading" secondItem="dz4-sd-Exf" secondAttribute="trailing" constant="-248" id="rQG-jl-xrE"/>
+                            <constraint firstAttribute="trailing" secondItem="9e6-eE-oYY" secondAttribute="trailing" id="zaO-3o-9Ne"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="StatusHub" id="9OF-hJ-mds"/>
                     <connections>
                         <outlet property="tableView" destination="9e6-eE-oYY" id="62h-xS-H9Q"/>
+                        <outlet property="txtMessage" destination="dz4-sd-Exf" id="dit-2v-r2m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

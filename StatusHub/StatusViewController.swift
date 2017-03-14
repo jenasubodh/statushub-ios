@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import SocketIO
+
 
 class StatusViewController: UIViewController {
    
     // MARK: - IBOutlets
-    
+   
+    @IBOutlet weak var txtMessage: UITextField!
     @IBOutlet weak var tableView: UITableView!
 
-    // MARK: - Default Overrides
+    // MARK: - View Controller Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let socket = SocketIOClient(socketURL: URL(string: "http://localhost:9000")!, config: [.log(false), .forcePolling(false)])
+        
+        socket.on("connect") {data, ack in
+            print("socket connected")
+        }
+        
+        socket.on("status") {data, ack in
+            print("got some data !! \(data)")
+        }
+        
+        socket.connect()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,4 +48,10 @@ class StatusViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
 
+    // MARK: - IBActions
+    
+    @IBAction func didTapShare(_ sender: Any) {
+        
+    }
+    
 }
