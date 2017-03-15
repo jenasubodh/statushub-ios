@@ -10,7 +10,7 @@ import UIKit
 import SocketIO
 
 class StatusViewController: UIViewController {
-   
+    
     // MARK: - Private Declarations
     
     var statusMessages : [Post] = []{
@@ -21,36 +21,36 @@ class StatusViewController: UIViewController {
     }
     
     // MARK: - IBOutlets
-   
+    
     @IBOutlet weak var txtMessage: UITextField!
     @IBOutlet weak var tableView: UITableView!
-
+    
     // MARK: - View Controller Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         showLoginScreen()
         
         tableView.dataSource = self
         tableView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(StatusViewController.handleStatusMessageNotification(_:)), name: NSNotification.Name(rawValue: "statusMessage"), object: nil)
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-
+    
     // MARK: - IBActions
     
     @IBAction func didTapShare(_ sender: Any) {
@@ -60,7 +60,7 @@ class StatusViewController: UIViewController {
     func handleStatusMessageNotification(_ notification: Notification) {
         
         let statusDictionary = notification.object as! [String : AnyObject]
-   
+        
         // Create Post
         let post = Post(dictionary: statusDictionary as NSDictionary)
         statusMessages.append(post!)
@@ -69,8 +69,21 @@ class StatusViewController: UIViewController {
     
     func showLoginScreen() {
         
-        let viewController:UIViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(withIdentifier: "Authentication")
-        self.present(viewController, animated: true, completion: nil)
+        if(!isLoggedIn()) {
+            let viewController:UIViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(withIdentifier: "Authentication")
+            self.present(viewController, animated: true, completion: nil)
+        }
+    }
+    
+    func isLoggedIn() -> Bool {
+        
+        let defaults = UserDefaults.standard
+        
+        if let authKey = defaults.string(forKey: "authKey") {
+            return true
+        }
+        
+        return false
     }
 }
 

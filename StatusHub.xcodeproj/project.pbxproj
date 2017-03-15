@@ -16,6 +16,7 @@
 		C223C6301E78485200A25961 /* StatusHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223C62F1E78485200A25961 /* StatusHubTests.swift */; };
 		C223C63B1E78485200A25961 /* StatusHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223C63A1E78485200A25961 /* StatusHubUITests.swift */; };
 		C260A9221E79D8B400962F44 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C260A9201E79D8B400962F44 /* Authentication.storyboard */; };
+		C260A9241E79E60600962F44 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260A9231E79E60600962F44 /* Authorization.swift */; };
 		C27719941E79B5130031EE6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719931E79B5130031EE6D /* User.swift */; };
 		C27719961E79B51D0031EE6D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719951E79B51D0031EE6D /* Post.swift */; };
 		C27719981E79B5290031EE6D /* UIPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719971E79B5290031EE6D /* UIPost.swift */; };
@@ -66,6 +67,7 @@
 		C223C63A1E78485200A25961 /* StatusHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHubUITests.swift; sourceTree = "<group>"; };
 		C223C63C1E78485200A25961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C260A9211E79D8B400962F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
+		C260A9231E79E60600962F44 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		C27719931E79B5130031EE6D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C27719951E79B51D0031EE6D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C27719971E79B5290031EE6D /* UIPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPost.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				C27719921E79B5000031EE6D /* UIModels */,
 				C27719931E79B5130031EE6D /* User.swift */,
 				C27719951E79B51D0031EE6D /* Post.swift */,
+				C260A9231E79E60600962F44 /* Authorization.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				C223C61B1E78485200A25961 /* AppDelegate.swift in Sources */,
 				C27719941E79B5130031EE6D /* User.swift in Sources */,
 				C27719961E79B51D0031EE6D /* Post.swift in Sources */,
+				C260A9241E79E60600962F44 /* Authorization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
