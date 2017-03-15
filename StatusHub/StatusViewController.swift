@@ -8,8 +8,6 @@
 
 import UIKit
 import SocketIO
-import SwiftyJSON
-
 
 class StatusViewController: UIViewController {
    

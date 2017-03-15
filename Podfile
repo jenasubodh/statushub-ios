@@ -7,7 +7,6 @@ target 'StatusHub' do
 
   # Pods for StatusHub
   pod 'Alamofire', '~> 4.4'
-  pod 'SwiftyJSON', '~> 3.1'
   pod 'Socket.IO-Client-Swift', '~> 8.3'
 
   target 'StatusHubTests' do
