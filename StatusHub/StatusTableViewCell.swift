@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class StatusTableViewCell: UITableViewCell {
     
@@ -49,6 +50,8 @@ class StatusTableViewCell: UITableViewCell {
         lblName.text = post.user?.name
         lblDate.text = post.createdAt
         lblMessage.text = post.message
+        imgProfile.sd_setImage(with: URL(string: (post.user?.picture)!), placeholderImage: nil)
+
     }
 
 }

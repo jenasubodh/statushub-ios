@@ -8,6 +8,7 @@ target 'StatusHub' do
   # Pods for StatusHub
   pod 'Alamofire', '~> 4.4'
   pod 'Socket.IO-Client-Swift', '~> 8.3'
+  pod 'SDWebImage', '~> 4.0'
 
   target 'StatusHubTests' do
     inherit! :search_paths
