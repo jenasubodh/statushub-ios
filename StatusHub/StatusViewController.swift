@@ -8,10 +8,20 @@
 
 import UIKit
 import SocketIO
+import SwiftyJSON
 
 
 class StatusViewController: UIViewController {
    
+    // MARK: - Private Declarations
+    
+    var statusMessages : [Post] = []{
+        
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    
     // MARK: - IBOutlets
    
     @IBOutlet weak var txtMessage: UITextField!
@@ -22,17 +32,10 @@ class StatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let socket = SocketIOClient(socketURL: URL(string: "http://localhost:9000")!, config: [.log(false), .forcePolling(false)])
-        
-        socket.on("connect") {data, ack in
-            print("socket connected")
-        }
-        
-        socket.on("status") {data, ack in
-            print("got some data !! \(data)")
-        }
-        
-        socket.connect()
+        tableView.dataSource = self
+        tableView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(StatusViewController.handleStatusMessageNotification(_:)), name: NSNotification.Name(rawValue: "statusMessage"), object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,4 +57,49 @@ class StatusViewController: UIViewController {
         
     }
     
+    func handleStatusMessageNotification(_ notification: Notification) {
+        
+        let statusDictionary = notification.object as! [String : AnyObject]
+   
+        // Create Post
+        let post = Post(dictionary: statusDictionary as NSDictionary)
+        statusMessages.append(post!)
+        statusMessages.reverse()
+    }
 }
+
+
+// MARK: - TableView DataSource
+
+extension StatusViewController: UITableViewDataSource {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusMessages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: StatusTableViewCell.reuseIdentifier, for: indexPath) as! StatusTableViewCell
+        cell.post = statusMessages[indexPath.row]
+        
+        return cell
+    }
+}
+
+// MARK: - TableView Delegate
+
+extension StatusViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return StatusTableViewCell.cellHeight
+    }
+}
+

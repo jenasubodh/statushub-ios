@@ -15,6 +15,14 @@
 		C223C6251E78485200A25961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C223C6231E78485200A25961 /* LaunchScreen.storyboard */; };
 		C223C6301E78485200A25961 /* StatusHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223C62F1E78485200A25961 /* StatusHubTests.swift */; };
 		C223C63B1E78485200A25961 /* StatusHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223C63A1E78485200A25961 /* StatusHubUITests.swift */; };
+		C27719941E79B5130031EE6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719931E79B5130031EE6D /* User.swift */; };
+		C27719961E79B51D0031EE6D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719951E79B51D0031EE6D /* Post.swift */; };
+		C27719981E79B5290031EE6D /* UIPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719971E79B5290031EE6D /* UIPost.swift */; };
+		C277199A1E79B5380031EE6D /* UIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719991E79B5380031EE6D /* UIUser.swift */; };
+		C277199E1E79B57D0031EE6D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277199D1E79B57D0031EE6D /* SignupViewController.swift */; };
+		C27719A01E79B58C0031EE6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277199F1E79B58C0031EE6D /* LoginViewController.swift */; };
+		C27719A31E79B9270031EE6D /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719A21E79B9270031EE6D /* StatusTableViewCell.swift */; };
+		C27719A51E79C2A30031EE6D /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719A41E79C2A30031EE6D /* SocketIOManager.swift */; };
 		C2B96C471E7858FA006D9572 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B96C461E7858FA006D9572 /* StatusViewController.swift */; };
 		E952CD12041B4A783F30BD12 /* Pods_StatusHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AAFD451198AE445AC41826 /* Pods_StatusHub.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +65,14 @@
 		C223C6361E78485200A25961 /* StatusHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C223C63A1E78485200A25961 /* StatusHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHubUITests.swift; sourceTree = "<group>"; };
 		C223C63C1E78485200A25961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C27719931E79B5130031EE6D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C27719951E79B51D0031EE6D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C27719971E79B5290031EE6D /* UIPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPost.swift; sourceTree = "<group>"; };
+		C27719991E79B5380031EE6D /* UIUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUser.swift; sourceTree = "<group>"; };
+		C277199D1E79B57D0031EE6D /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C277199F1E79B58C0031EE6D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C27719A21E79B9270031EE6D /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		C27719A41E79C2A30031EE6D /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		C2B96C461E7858FA006D9572 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C885AE94B454D4A08167E332 /* Pods-StatusHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StatusHub/Pods-StatusHub.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,11 +153,13 @@
 		C223C6191E78485200A25961 /* StatusHub */ = {
 			isa = PBXGroup;
 			children = (
+				C27719911E79B4FB0031EE6D /* Models */,
 				C2B96C451E7858E8006D9572 /* ViewControllers */,
 				C2B96C441E7858B6006D9572 /* UI */,
 				C223C61A1E78485200A25961 /* AppDelegate.swift */,
 				C223C6211E78485200A25961 /* Assets.xcassets */,
 				C223C6261E78485200A25961 /* Info.plist */,
+				C27719A41E79C2A30031EE6D /* SocketIOManager.swift */,
 			);
 			path = StatusHub;
 			sourceTree = "<group>";
@@ -164,6 +182,49 @@
 			path = StatusHubUITests;
 			sourceTree = "<group>";
 		};
+		C27719911E79B4FB0031EE6D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C27719921E79B5000031EE6D /* UIModels */,
+				C27719931E79B5130031EE6D /* User.swift */,
+				C27719951E79B51D0031EE6D /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C27719921E79B5000031EE6D /* UIModels */ = {
+			isa = PBXGroup;
+			children = (
+				C27719971E79B5290031EE6D /* UIPost.swift */,
+				C27719991E79B5380031EE6D /* UIUser.swift */,
+			);
+			name = UIModels;
+			sourceTree = "<group>";
+		};
+		C277199B1E79B54D0031EE6D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C277199F1E79B58C0031EE6D /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		C277199C1E79B5530031EE6D /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				C277199D1E79B57D0031EE6D /* SignupViewController.swift */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		C27719A11E79B9140031EE6D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C27719A21E79B9270031EE6D /* StatusTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		C2B96C441E7858B6006D9572 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +237,8 @@
 		C2B96C451E7858E8006D9572 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C277199C1E79B5530031EE6D /* Signup */,
+				C277199B1E79B54D0031EE6D /* Login */,
 				C2B96C481E785A06006D9572 /* Status */,
 			);
 			name = ViewControllers;
@@ -184,6 +247,7 @@
 		C2B96C481E785A06006D9572 /* Status */ = {
 			isa = PBXGroup;
 			children = (
+				C27719A11E79B9140031EE6D /* Cell */,
 				C2B96C461E7858FA006D9572 /* StatusViewController.swift */,
 			);
 			name = Status;
@@ -457,8 +521,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27719A31E79B9270031EE6D /* StatusTableViewCell.swift in Sources */,
 				C2B96C471E7858FA006D9572 /* StatusViewController.swift in Sources */,
+				C277199E1E79B57D0031EE6D /* SignupViewController.swift in Sources */,
+				C27719981E79B5290031EE6D /* UIPost.swift in Sources */,
+				C277199A1E79B5380031EE6D /* UIUser.swift in Sources */,
+				C27719A01E79B58C0031EE6D /* LoginViewController.swift in Sources */,
+				C27719A51E79C2A30031EE6D /* SocketIOManager.swift in Sources */,
 				C223C61B1E78485200A25961 /* AppDelegate.swift in Sources */,
+				C27719941E79B5130031EE6D /* User.swift in Sources */,
+				C27719961E79B51D0031EE6D /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +682,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C885AE94B454D4A08167E332 /* Pods-StatusHub.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StatusHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -623,6 +696,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7C8BBA07F75D50E7307ACF6 /* Pods-StatusHub.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StatusHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
