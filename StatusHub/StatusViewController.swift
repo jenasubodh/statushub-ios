@@ -8,6 +8,7 @@
 
 import UIKit
 import SocketIO
+import Alamofire
 
 class StatusViewController: UIViewController {
     
@@ -55,6 +56,11 @@ class StatusViewController: UIViewController {
     
     @IBAction func didTapShare(_ sender: Any) {
         
+        let status = txtMessage.text!
+        if(!status.isEmpty){
+            txtMessage.text = ""
+            postStatus(message: status)
+        }
     }
     
     func handleStatusMessageNotification(_ notification: Notification) {
@@ -84,6 +90,43 @@ class StatusViewController: UIViewController {
         }
         
         return false
+    }
+    
+    func postStatus (message : String) {
+        
+        
+        let defaults = UserDefaults.standard
+
+        if let authKey = defaults.string(forKey: "authKey") {
+            
+            let parameters: Parameters = [ "access_token": authKey, "message": message]
+            
+            Alamofire.request("https://statushub-dev.herokuapp.com/posts", method: .post, parameters : parameters)
+                .responseJSON { response in
+                    
+                    if(response.response?.statusCode == 201){
+                        
+                        print(response.result.value)
+                    }
+                    else{
+                        self.showValidationMessage(message: "Something is Wrong !! Try Again...")
+                        print("Something is Wrong !! Try Again...")
+                    }
+            }
+        }
+        else
+        {
+            self.showValidationMessage(message: "Restart Your App !!")
+            let defaults = UserDefaults.standard
+            defaults.set(nil, forKey: "authKey")
+        }
+    }
+
+    private func showValidationMessage (message : String) {
+        
+        let alert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
