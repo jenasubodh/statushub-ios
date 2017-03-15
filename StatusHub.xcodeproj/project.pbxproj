@@ -15,11 +15,11 @@
 		C223C6251E78485200A25961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C223C6231E78485200A25961 /* LaunchScreen.storyboard */; };
 		C223C6301E78485200A25961 /* StatusHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223C62F1E78485200A25961 /* StatusHubTests.swift */; };
 		C223C63B1E78485200A25961 /* StatusHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223C63A1E78485200A25961 /* StatusHubUITests.swift */; };
+		C260A9221E79D8B400962F44 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C260A9201E79D8B400962F44 /* Authentication.storyboard */; };
 		C27719941E79B5130031EE6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719931E79B5130031EE6D /* User.swift */; };
 		C27719961E79B51D0031EE6D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719951E79B51D0031EE6D /* Post.swift */; };
 		C27719981E79B5290031EE6D /* UIPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719971E79B5290031EE6D /* UIPost.swift */; };
 		C277199A1E79B5380031EE6D /* UIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719991E79B5380031EE6D /* UIUser.swift */; };
-		C277199E1E79B57D0031EE6D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277199D1E79B57D0031EE6D /* SignupViewController.swift */; };
 		C27719A01E79B58C0031EE6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277199F1E79B58C0031EE6D /* LoginViewController.swift */; };
 		C27719A31E79B9270031EE6D /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719A21E79B9270031EE6D /* StatusTableViewCell.swift */; };
 		C27719A51E79C2A30031EE6D /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27719A41E79C2A30031EE6D /* SocketIOManager.swift */; };
@@ -65,11 +65,11 @@
 		C223C6361E78485200A25961 /* StatusHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C223C63A1E78485200A25961 /* StatusHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHubUITests.swift; sourceTree = "<group>"; };
 		C223C63C1E78485200A25961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C260A9211E79D8B400962F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
 		C27719931E79B5130031EE6D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C27719951E79B51D0031EE6D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C27719971E79B5290031EE6D /* UIPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPost.swift; sourceTree = "<group>"; };
 		C27719991E79B5380031EE6D /* UIUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUser.swift; sourceTree = "<group>"; };
-		C277199D1E79B57D0031EE6D /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C277199F1E79B58C0031EE6D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C27719A21E79B9270031EE6D /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		C27719A41E79C2A30031EE6D /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
@@ -209,14 +209,6 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		C277199C1E79B5530031EE6D /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				C277199D1E79B57D0031EE6D /* SignupViewController.swift */,
-			);
-			name = Signup;
-			sourceTree = "<group>";
-		};
 		C27719A11E79B9140031EE6D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +220,7 @@
 		C2B96C441E7858B6006D9572 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C260A9201E79D8B400962F44 /* Authentication.storyboard */,
 				C223C6231E78485200A25961 /* LaunchScreen.storyboard */,
 				C223C61E1E78485200A25961 /* Main.storyboard */,
 			);
@@ -237,7 +230,6 @@
 		C2B96C451E7858E8006D9572 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C277199C1E79B5530031EE6D /* Signup */,
 				C277199B1E79B54D0031EE6D /* Login */,
 				C2B96C481E785A06006D9572 /* Status */,
 			);
@@ -371,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C260A9221E79D8B400962F44 /* Authentication.storyboard in Resources */,
 				C223C6251E78485200A25961 /* LaunchScreen.storyboard in Resources */,
 				C223C6221E78485200A25961 /* Assets.xcassets in Resources */,
 				C223C6201E78485200A25961 /* Main.storyboard in Resources */,
@@ -523,7 +516,6 @@
 			files = (
 				C27719A31E79B9270031EE6D /* StatusTableViewCell.swift in Sources */,
 				C2B96C471E7858FA006D9572 /* StatusViewController.swift in Sources */,
-				C277199E1E79B57D0031EE6D /* SignupViewController.swift in Sources */,
 				C27719981E79B5290031EE6D /* UIPost.swift in Sources */,
 				C277199A1E79B5380031EE6D /* UIUser.swift in Sources */,
 				C27719A01E79B58C0031EE6D /* LoginViewController.swift in Sources */,
@@ -580,6 +572,14 @@
 				C223C6241E78485200A25961 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C260A9201E79D8B400962F44 /* Authentication.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C260A9211E79D8B400962F44 /* Base */,
+			);
+			name = Authentication.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

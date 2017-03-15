@@ -29,6 +29,8 @@ class StatusViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        showLoginScreen()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -63,6 +65,12 @@ class StatusViewController: UIViewController {
         let post = Post(dictionary: statusDictionary as NSDictionary)
         statusMessages.append(post!)
         statusMessages.reverse()
+    }
+    
+    func showLoginScreen() {
+        
+        let viewController:UIViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(withIdentifier: "Authentication")
+        self.present(viewController, animated: true, completion: nil)
     }
 }
 
