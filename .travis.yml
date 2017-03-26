@@ -2,19 +2,5 @@ language: objective-c
 os: osx
 osx_image: xcode8.2
 
-before_install:
-    - gem install xcpretty -N --no-ri --no-rdoc
-
-env:
-    global:
-        - COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=1
-    matrix:
-        - MATRIX_TARGET="-scheme StatusHub -sdk iphonesimulator"
-
-script:
-    - set -o pipefail
-    #- xcodebuild clean build -workspace StatusHub.xcworkspace -scheme StatusHub -destination “platform=iOS Simulator,name=iPhone 6S”
-    - xcodebuild clean test -workspace StatusHub.xcworkspace $MATRIX_TARGET GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
-
 after_success:
     - bash <(curl -s https://codecov.io/bash) -J 'StatusHub'
